@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block body %}
+
+{{ parent() }}
+
+<div class="container nav-fix">
+	<div class="row">
+		<div class="two-thirds column">
+{% for page in pages|sort_by("time")|reverse %}
+    {% if page.date %}
+        		<div>
+            <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+			<p>{{ page.date_formatted }}</p>
+            <p>{{ page.description }}</p>
+			<p><a class="button button-primary" href="{{ page.url }}" role="button">Read More &raquo;</a></p>
+			<hr />
+       		 </div>
+    {% endif %}
+{% endfor %}
+		</div>
+		<div class="one-third column">
+{% include 'sidebar.twig' %}
+		</div>
+	</div>
+</div>
+{% endblock %}

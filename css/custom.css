@@ -1,0 +1,114 @@
+/* SKELETON FIXES */
+
+.nav-fix{padding-top: 70px;}
+
+/* NAVIGATION BARS */
+
+nav {
+width: 100%;
+padding: 0em;
+height: 60px;
+position: fixed;
+z-index: 10;
+background: #FFF;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+top: 0;
+}
+
+.container-nav {width: 80%; max-width: 960px;}
+
+nav ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    float: right;
+}
+
+nav ul, nav ul li {
+margin: 0px;
+}
+
+nav ul li {
+display: inline;
+position: relative;
+float: left;
+}
+
+nav a img {
+margin: 8px 0px;
+float: left;
+}
+
+nav ul li a{
+display: inline-block;
+line-height: 60px;
+padding: 0 14px;
+font-family: 'Montserrat', sans-serif;
+font-size: 18px;
+font-weight: bold;
+}
+
+nav ul li a:link {color: #3498db; text-decoration: none;}
+nav ul li a:visited {color: #3498db;}
+nav ul li a:hover {color: #2980b9;}
+
+#mobilenav {
+display: none;
+width: 100%;
+height: 60px;
+position: fixed;
+}
+
+#mobilenav img {padding-bottom: 8px;}
+#mobilelogo {float: left;}
+#mobilehamburger {float: right; padding-bottom: 0; padding-top: 16px;}
+
+@media screen and (max-width: 1050px) {
+	nav {
+	display: block;
+	padding: 0;
+	z-index: 10;
+	background: #FFF;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	top: 0;
+	}
+	nav ul li {
+	width: 100%;
+	text-align: center;
+	}
+	#desktopnav{display:none;}
+	#mobilenav{display:block;}
+}
+
+label, legend {display: inline;}
+
+label {
+	cursor: pointer;
+}
+
+#menu-toggle{display: none; /* hide the checkbox */}
+
+#menu{display: none;}
+
+#menu li a {padding: 0px; background: #FFF; width: 100%;}
+
+#menu-toggle:checked + #menu {
+margin-top: -6px;
+display: block;
+width: 100%;
+}
+
+/* FOOTER */
+
+footer {
+padding-top: 1.5em;
+}
+
+footer p{text-align: center;}
+
+footer a, footer a:visited {color: #7f8c8d; text-decoration: none;}
+footer a:hover {text-decoration: underline;}

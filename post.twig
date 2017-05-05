@@ -1,0 +1,47 @@
+{% extends "base.twig" %}
+
+{% block body %}
+<div class="container nav-fix">
+<div class="row">
+<div class="two-thirds column">
+
+<h1>{{ current_page.title }}</h1>
+
+<p>{{ current_page.date_formatted }}</p>
+
+{{ content }}
+
+</div>
+
+<div class="one-third column">
+<h3>Recent Posts</h3>
+{% for page in pages|sort_by("time")|reverse|slice(0,5) %}
+    {% if page.date %}
+        <ul>
+            <li><strong><a href="{{ page.url }}">{{ page.title }}</a></strong><br />{{ page.date_formatted }}</li>
+        </ul>
+    {% endif %}
+{% endfor %}
+{% include 'sidebar.twig' %}
+</div>
+</div>
+
+{% if config['disqus'] is defined %}
+
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = '{{current_page.url}}';
+this.page.identifier = '{{current_page.id}}';
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//{{ config['disqus'] }}.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+{% endif %}
+
+{% endblock %}

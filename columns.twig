@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block body %}
+
+<div class="nav-fix">
+</div>
+
+<div class="container">
+<div class="row">
+<div class="two-thirds column">
+
+{{ content }}
+
+</div>
+
+<div class="one-third column">
+<h3>Recent Posts</h3>
+{% for page in pages|sort_by("time")|reverse|slice(0,5) %}
+    {% if page.date %}
+        <ul>
+            <li><strong><a href="{{ page.url }}">{{ page.title }}</a></strong><br />{{ page.date_formatted }}</li>
+        </ul>
+    {% endif %}
+{% endfor %}
+{% include 'sidebar.twig' %}
+</div>
+</div>
+</div>
+
+{% endblock %}
