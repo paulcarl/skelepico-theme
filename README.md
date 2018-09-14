@@ -1,6 +1,6 @@
 # skelepico-theme
 
-Live Demo: http://skelepico.com/
+Live Demo: https://paulcarl.com/skelepico/
 
 Skelepico Theme is a bare-bones theme for Pico CMS created on the Skeleton framework. It uses exclusively elements from Skeleton except for these features that I've added:
 
